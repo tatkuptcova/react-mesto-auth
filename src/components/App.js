@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import api from '../utils/api';
 import Header from './Header';
 import Main from './Main';
@@ -135,16 +136,24 @@ function App() {
     <div className="page">
       <CurrentUserContext.Provider value={currentUser}>
         <Header/>
-        <Main 
-          cards={cards}
-          onEditProfile={handleEditProfileClick} 
-          onEditAvatar={handleEditAvatarClick} 
-          onCardClick={handleCardClick}
-          onCardLike={handleCardLike}
-          onCardDelete={handleCardDelete}
-          onAddPlace={handelAddPlace}
-        />
-        <Footer/>
+        <Switch>
+          <Main
+            cards={cards}
+            onEditProfile={handleEditProfileClick} 
+            onEditAvatar={handleEditAvatarClick} 
+            onCardClick={handleCardClick}
+            onCardLike={handleCardLike}
+            onCardDelete={handleCardDelete}
+            onAddPlace={handelAddPlace}
+          />
+          <Route path="/sing-up">
+            
+          </Route>
+          <Route path="/sing-in">
+           
+          </Route>
+          <Footer/>
+        </Switch>
         <PopupWithForm name='delete' title='Вы уверены?' buttonText='Удалить' onClose={closeAllPopups}/>
         <ImagePopup 
           isOpen={isImagePopupOpen} 
