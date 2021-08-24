@@ -1,7 +1,17 @@
 .header {
-    max-width: 882px;
-    margin: auto;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+    border-bottom: 1px solid rgba(84,84,84,.7);
+    width: calc(100% - 20px);
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap-reverse;
+    flex-wrap: wrap-reverse;
+    padding: 27px 0 39px;
 }
 
 /*@media screen and (max-width: 475px) {
