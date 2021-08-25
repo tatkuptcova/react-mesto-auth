@@ -1,16 +1,17 @@
 import FailRegister from "../images/FailRegister.svg";
 import SuccesfulRegister from "../images/SuccesfulRegister.svg"
 
+
 function InfoToolTip({onClose, isOpen, isRegSucces}){
     return(
-        <div className={isOpen ? `popup_opened popup` :`popup` }>
+        <div className={`popup popup_type_view ${isOpen ? 'popup_opened' : ' '}`}>
             <div className="popup__content">
-                <button type="button"  className="popup__close" onClick={onClose} ></button>
+            <button type="button" aria-label="Закрыть" className="button popup__close popup__close_image" onClick={onClose}></button>
                 <img src={isRegSucces ? SuccesfulRegister:FailRegister} className="popup__info-icon" alt="успех регистрации"/>
-                <h3 className="popup__title-info">{isRegSucces ?
-                    "Вы успешно зарегистрировались":
-                    "Что-то пошло не так\n Попробуйте еще раз."
-                    }</h3>
+                <h2 className="popup__title-info">{isRegSucces 
+                    ? `Вы успешно зарегистрировались!`
+                    : `Что-то пошло не так! Попробуйте еще раз.`
+                }</h2>
             </div>
         </div>
     )

@@ -53,6 +53,15 @@ function App() {
             console.log(`Ошибка: ${err}`)
         });
     }, []);
+
+    React.useEffect(() => {
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeAllPopups();
+          }
+        })
+    },[]);
+    
     
     const handleEditAvatarClick = () => {
         setIsEditAvatarPopupOpen(true)
@@ -72,7 +81,8 @@ function App() {
         setIsEditAvatarPopupOpen(false);
         setIsEditProfilePopupOpen(false);
         setIsImagePopupOpen(false);
-        setSelectedCard(false)
+        setSelectedCard(false);
+        setIsInfoPopupOpen(false);
     };
 
 
@@ -212,7 +222,6 @@ function App() {
                                         cards={cards}
                                         onCardLike={handleCardLike}
                                         onCardDelete={handleCardDelete}
-
                         />
                         <Route  path="/sign-in">
                             <Login onSubmit={handleLoginSubmit}/>
@@ -223,7 +232,10 @@ function App() {
                     </Switch>
                     <Footer/>
 
-                    <InfoToolTip isRegSucces={isRegSucces} isOpen={isInfoPopupOpen} onClose={closeAllPopups}/>
+                    <InfoToolTip 
+                            isRegSucces={isRegSucces} 
+                            isOpen={isInfoPopupOpen} 
+                            onClose={closeAllPopups}/>
                     <PopupWithForm name='delete' title='Вы уверены?' buttonText='Удалить' onClose={closeAllPopups}/>
                     <ImagePopup 
                         isOpen={isImagePopupOpen} 
