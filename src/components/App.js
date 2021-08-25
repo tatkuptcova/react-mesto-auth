@@ -80,7 +80,7 @@ function App() {
         setIsEditAvatarPopupOpen(false);
         setIsEditProfilePopupOpen(false);
         setIsImagePopupOpen(false);
-        setSelectedCard(false);
+        setSelectedCard({});
         setIsInfoPopupOpen(false);
     };
 
