@@ -31,7 +31,7 @@ function Card (props) {
                 <img src={basket} alt="Удалить"/>
             </button>
             )}
-            <img className="elements__image" src={props.link} alt="#" onClick={handleClick}/>
+            <img className="elements__image" src={props.link} alt={props.name} onClick={handleClick}/>
             <div className="elements__info">
                 <h2 className="elements__title">{props.name}</h2>
                 <div className="elements__place-like">
