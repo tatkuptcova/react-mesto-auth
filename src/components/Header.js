@@ -2,6 +2,7 @@ import {Link,Route} from "react-router-dom";
 import logo from '../images/logo.svg';
 
 function Header ({email,onSignOut}){
+    
     return(
         <header className="header">
             <img src={logo} alt="Лого" className="header__logo"/>
