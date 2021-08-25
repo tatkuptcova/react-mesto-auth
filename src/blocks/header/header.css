@@ -1,5 +1,12 @@
 .header {
-    border-bottom: 1px solid rgba(84,84,84,.7);
+    padding-bottom: 40px;
+    max-width: 882px;
+    padding-top: 45px;
+    margin: 0 auto;
+    border-bottom: 1px solid #545454;
+    display: flex;
+    justify-content: space-between;
+    /* border-bottom: 1px solid rgba(84,84,84,.7);
     width: calc(100% - 20px);
     margin: 0 auto;
     display: -webkit-flex;
@@ -11,7 +18,7 @@
     -webkit-flex-direction: row;
     -webkit-flex-wrap: wrap-reverse;
     flex-wrap: wrap-reverse;
-    padding: 27px 0 39px;
+    padding: 27px 0 39px; */
 }
 
 /*@media screen and (max-width: 475px) {
